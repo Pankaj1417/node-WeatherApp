@@ -7,6 +7,7 @@ const getWeatherForecast = require('./utils/weatherForecast')
 
 //getting the application rtesponse from server
 const app = express()
+const port = process.env.PORT || 3000
 
 //Gettig the path of endpoints
 const publicDirectoryPAth = path.join(__dirname,'../public')
@@ -90,6 +91,6 @@ app.get('*',(req , res)=>{
     })
 })
 //Strting the server
-app.listen(3000 , ()=>{
-    console.log('server is up and running on port 3000')
+app.listen(port , ()=>{
+    console.log('server is up and running on port -> '+port)
 })
